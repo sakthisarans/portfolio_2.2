@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sakthisaran S — AI Engineer | Backend Systems, RAG &amp; LLM Infrastructure</title>
+<meta name="description" content="Sakthisaran S is an AI Engineer with 2+ years building production AI systems — RAG pipelines, LLM integrations, and Kubernetes-deployed backend services in Java and Python. Also runs a self-hosted homelab with Immich, Nextcloud, n8n, and Firefly III.">
+<meta name="keywords" content="Sakthisaran S, AI Engineer, Backend Engineer, RAG pipelines, LLM integration, Java Spring Boot, Python, Kubernetes, Azure OpenAI, MongoDB, Bengaluru AI Engineer">
+<meta name="author" content="Sakthisaran S">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sakthisaran.in/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Sakthisaran S — AI Engineer">
+<meta property="og:description" content="Building production-grade AI systems, RAG pipelines, and backend services. 2+ years of experience, plus a self-hosted Kubernetes homelab running Immich, Nextcloud, n8n, and Firefly III.">
+<meta property="og:url" content="https://sakthisaran.in/">
+<meta property="og:image" content="https://sakthisaran.in/profile.png">
+<meta property="og:site_name" content="Sakthisaran S — Portfolio">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sakthisaran S — AI Engineer">
+<meta name="twitter:description" content="Building production-grade AI systems, RAG pipelines, and backend services in Java &amp; Python.">
+<meta name="twitter:image" content="https://sakthisaran.in/profile.png">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B0E0F%22/><circle cx=%2250%22 cy=%2250%22 r=%2214%22 fill=%22%235EEAD4%22/></svg>">
+
+<!-- Structured data: Person schema for AI / search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sakthisaran S",
+  "jobTitle": "AI Engineer",
+  "description": "Results-driven AI Engineer with 2+ years of experience building production-grade AI systems, RAG pipelines, and backend services using Java, Python, and Azure OpenAI.",
+  "url": "https://sakthisaran.in/",
+  "image": "https://sakthisaran.in/profile.png",
+  "email": "mailto:sakthisaransss55@gmail.com",
+  "telephone": "+91-8925317177",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kallahurichi",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "K S Rangasamy College of Technology"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Altolabs"
+  },
+  "sameAs": [
+    "https://github.com/sakthisarans",
+    "https://www.linkedin.com/in/sakthisaran-s/"
+  ],
+  "knowsAbout": ["Artificial Intelligence", "Retrieval-Augmented Generation", "Large Language Models", "Java", "Python", "Kubernetes", "Azure OpenAI", "MongoDB", "Backend Engineering"]
+}
+</script>
+
+<!-- AI-crawler friendly summary (machine-readable plain text, visually hidden) -->
+<meta name="ai-summary" content="Sakthisaran S — AI Engineer, 2+ years experience. Currently AI Engineer at Altolabs (June 2025–present), building backend and AI systems with Java, Python, Azure OpenAI, RAG, and Kubernetes. Previously Software Engineer at Mondee (Jan 2024–June 2025). Runs a self-hosted MicroK8s homelab on Raspberry Pi 5 and Proxmox with TrueNAS storage, hosting Immich, Nextcloud, n8n, and Firefly III. B.Tech IT from K S Rangasamy College of Technology, 8.35 CGPA, 2019–2023. Contact: sakthisaransss55@gmail.com.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0B0E0F;
+    --panel:#10151A;
+    --panel-hover:#141B22;
+    --line: rgba(245,243,238,0.09);
+    --line-bright: rgba(245,243,238,0.18);
+    --ink:#F5F3EE;
+    --ink-dim:#8B9398;
+    --ink-faint:#5A6166;
+    --mint:#5EEAD4;
+    --mint-dim: rgba(94,234,212,0.14);
+    --warn:#FF6B5E;
+    --amber:#E8B559;
+    --radius: 10px;
+    --maxw: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* subtle ambient grid texture */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:
+      linear-gradient(rgba(245,243,238,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,243,238,0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events:none;
+    z-index:0;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 70%);
+  }
+
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--mint); color:#0B0E0F;}
+
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; margin:0; letter-spacing:-0.01em;}
+
+  .mono{font-family:'JetBrains Mono', monospace;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+
+  /* ---------- Skip link ---------- */
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--mint); color:#0B0E0F; padding:10px 16px; border-radius:6px; z-index:100;
+  }
+  .skip-link:focus{left:16px; top:16px;}
+
+  /* ---------- Focus visibility ---------- */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--mint); outline-offset:3px; border-radius:4px;
+  }
+
+  /* ===================== NAV ===================== */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,14,15,0.82);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; max-width:var(--maxw); margin:0 auto;
+  }
+  .nav-id{display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono', monospace; font-size:14px;}
+  .pulse-dot{
+    width:8px; height:8px; border-radius:50%; background:var(--mint);
+    box-shadow:0 0 0 0 rgba(94,234,212,0.6);
+    animation: pulse 2.4s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(94,234,212,0.55);}
+    70%{box-shadow:0 0 0 7px rgba(94,234,212,0);}
+    100%{box-shadow:0 0 0 0 rgba(94,234,212,0);}
+  }
+  nav.links{display:flex; gap:28px; font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--ink-dim);}
+  nav.links a{transition:color .2s;}
+  nav.links a:hover{color:var(--mint);}
+  .nav-cta{
+    font-family:'JetBrains Mono', monospace; font-size:13px;
+    border:1px solid var(--line-bright); padding:8px 16px; border-radius:6px;
+    transition: all .2s;
+  }
+  .nav-cta:hover{border-color:var(--mint); color:var(--mint); background:var(--mint-dim);}
+  .menu-toggle{display:none; background:none; border:none; color:var(--ink); font-size:24px; cursor:pointer;}
+
+  @media (max-width: 760px){
+    nav.links{display:none;}
+    .nav-cta{display:none;}
+    .menu-toggle{display:block;}
+  }
+
+  /* ===================== HERO ===================== */
+  .hero{
+    padding:96px 0 64px;
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:56px;
+    align-items:start;
+  }
+  @media (max-width: 900px){
+    .hero{grid-template-columns:1fr; padding:56px 0 40px;}
+  }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--mint);
+    display:flex; align-items:center; gap:10px; margin-bottom:22px;
+    opacity:0; animation: fadeUp .7s ease forwards; animation-delay:.05s;
+  }
+  .eyebrow .rule{width:32px; height:1px; background:var(--mint); opacity:.6;}
+
+  .hero h1{
+    font-size:clamp(40px, 6vw, 68px);
+    line-height:1.04;
+    opacity:0; animation: fadeUp .8s ease forwards; animation-delay:.15s;
+  }
+  .hero h1 .accent{color:var(--mint); font-style:italic; font-weight:450;}
+
+  .hero-sub{
+    margin-top:22px; color:var(--ink-dim); font-size:18px; max-width:540px;
+    opacity:0; animation: fadeUp .8s ease forwards; animation-delay:.3s;
+  }
+  .hero-sub strong{color:var(--ink); font-weight:600;}
+
+  .hero-actions{
+    margin-top:34px; display:flex; gap:14px; flex-wrap:wrap;
+    opacity:0; animation: fadeUp .8s ease forwards; animation-delay:.42s;
+  }
+  .btn{
+    font-family:'JetBrains Mono', monospace; font-size:14px;
+    padding:13px 22px; border-radius:7px; cursor:pointer; display:inline-flex; align-items:center; gap:8px;
+    transition: all .2s ease;
+  }
+  .btn-primary{background:var(--mint); color:#0B0E0F; border:1px solid var(--mint);}
+  .btn-primary:hover{background:#7FF2DE; transform:translateY(-1px);}
+  .btn-ghost{border:1px solid var(--line-bright); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--ink-dim); background:rgba(255,255,255,0.03);}
+
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* ---- Status panel (signature element) ---- */
+  .status-panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    opacity:0; animation: fadeUp .9s ease forwards; animation-delay:.5s;
+  }
+  .status-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:13px 18px; border-bottom:1px solid var(--line);
+    font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--ink-dim);
+  }
+  .status-head .dots{display:flex; gap:6px;}
+  .status-head .dots span{width:9px; height:9px; border-radius:50%; background:var(--ink-faint);}
+  .status-rows{padding:6px 0;}
+  .status-row{
+    display:grid; grid-template-columns: auto 1fr auto auto; gap:14px; align-items:center;
+    padding:12px 18px; font-family:'JetBrains Mono', monospace; font-size:13px;
+    border-bottom:1px solid var(--line); transition: background .2s;
+  }
+  .status-row:last-child{border-bottom:none;}
+  .status-row:hover{background:var(--panel-hover);}
+  .status-led{width:7px; height:7px; border-radius:50%; background:var(--mint); flex-shrink:0; box-shadow:0 0 6px rgba(94,234,212,0.7);}
+  .status-led.warn{background:var(--amber); box-shadow:0 0 6px rgba(232,181,89,0.6);}
+  .status-name{color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .status-meta{color:var(--ink-faint); font-size:11.5px;}
+  .status-latency{color:var(--mint-dim); color:var(--mint); font-size:12px; min-width:54px; text-align:right;}
+  .status-foot{
+    padding:11px 18px; border-top:1px solid var(--line); font-family:'JetBrains Mono', monospace;
+    font-size:11.5px; color:var(--ink-faint); display:flex; justify-content:space-between;
+  }
+
+  /* ===================== SECTION SHELL ===================== */
+  section{padding:88px 0; border-top:1px solid var(--line); position:relative;}
+  .section-head{display:flex; align-items:baseline; gap:18px; margin-bottom:48px; flex-wrap:wrap;}
+  .section-tag{
+    font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--mint);
+    background:var(--mint-dim); padding:5px 10px; border-radius:5px; white-space:nowrap;
+  }
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);}
+
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ===================== ABOUT ===================== */
+  .about-grid{display:grid; grid-template-columns: 1fr 320px; gap:54px;}
+  @media (max-width:880px){.about-grid{grid-template-columns:1fr;}}
+  .about-text p{color:var(--ink-dim); font-size:17px; margin:0 0 18px;}
+  .about-text p strong{color:var(--ink); font-weight:600;}
+  .about-text a{color:var(--mint); border-bottom:1px solid rgba(94,234,212,0.35);}
+
+  .meta-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px;
+  }
+  .meta-card dl{margin:0;}
+  .meta-row{display:flex; justify-content:space-between; gap:12px; padding:11px 0; border-bottom:1px solid var(--line); font-size:13.5px;}
+  .meta-row:last-child{border-bottom:none;}
+  .meta-row dt{color:var(--ink-faint); font-family:'JetBrains Mono', monospace; font-size:12px;}
+  .meta-row dd{margin:0; color:var(--ink); text-align:right;}
+
+  /* ===================== TIMELINE / EXPERIENCE ===================== */
+  .timeline{position:relative;}
+  .tl-item{
+    display:grid; grid-template-columns: 200px 1fr; gap:32px;
+    padding:30px 0; border-bottom:1px solid var(--line);
+  }
+  .tl-item:first-child{padding-top:0;}
+  .tl-item:last-child{border-bottom:none;}
+  @media (max-width:760px){.tl-item{grid-template-columns:1fr; gap:10px;}}
+  .tl-when{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--ink-faint); padding-top:4px;}
+  .tl-when .current{color:var(--mint);}
+  .tl-body h3{font-size:21px; margin-bottom:4px;}
+  .tl-company{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--mint); margin-bottom:10px; display:block;}
+  .tl-body p{color:var(--ink-dim); font-size:15.5px; margin:0;}
+
+  /* ===================== PROJECTS ===================== */
+  .proj-list{display:flex; flex-direction:column; gap:1px;}
+  .proj{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px; margin-bottom:18px;
+    transition: border-color .25s, transform .25s;
+  }
+  .proj:hover{border-color:var(--line-bright); transform:translateX(2px);}
+  .proj-top{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap;}
+  .proj-role{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.06em;}
+  .proj h3{font-size:23px; margin:6px 0 12px;}
+  .proj p.desc{color:var(--ink-dim); font-size:15.5px; max-width:680px; margin:0 0 18px;}
+  .tag-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .tag{
+    font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--ink-dim);
+    border:1px solid var(--line); padding:4px 9px; border-radius:5px;
+  }
+
+  /* ===================== STACK ===================== */
+  .stack-grid{
+    display:grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap:1px;
+    border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+  }
+  .stack-cell{
+    background:var(--panel); padding:20px 16px; border:1px solid var(--line);
+    font-family:'JetBrains Mono', monospace; font-size:13.5px; color:var(--ink);
+    display:flex; align-items:center; gap:10px; transition: background .2s, color .2s;
+  }
+  .stack-cell:hover{background:var(--panel-hover); color:var(--mint);}
+  .stack-cell .bit{color:var(--ink-faint); font-size:11px;}
+
+  /* ===================== EDUCATION ===================== */
+  .edu-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 28px; display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap;
+  }
+  .edu-card h3{font-size:20px; margin-bottom:6px;}
+  .edu-card .inst{color:var(--ink-dim); font-size:14.5px;}
+  .edu-score{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--mint); text-align:right;}
+  .edu-score .yr{display:block; color:var(--ink-faint); font-size:12px; margin-top:4px;}
+
+  /* ===================== CONTACT ===================== */
+  .contact-grid{display:grid; grid-template-columns: 1.1fr 0.9fr; gap:54px;}
+  @media (max-width:880px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-lead{font-size:clamp(26px,3vw,36px); font-family:'Fraunces',serif; line-height:1.25;}
+  .contact-lead .accent{color:var(--mint); font-style:italic;}
+  .contact-list{margin-top:34px; display:flex; flex-direction:column; gap:2px;}
+  .contact-row{
+    display:flex; justify-content:space-between; align-items:center; padding:16px 0;
+    border-bottom:1px solid var(--line); font-family:'JetBrains Mono', monospace; font-size:14.5px;
+  }
+  .contact-row:first-child{padding-top:0;}
+  .contact-row span.label{color:var(--ink-faint); font-size:12px;}
+  .contact-row a{color:var(--ink); transition:color .2s;}
+  .contact-row a:hover{color:var(--mint);}
+  .contact-row .arrow{opacity:0; transition:opacity .2s; color:var(--mint); margin-left:8px;}
+  .contact-row:hover .arrow{opacity:1;}
+
+  .terminal-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+  }
+  .terminal-head{
+    padding:12px 16px; border-bottom:1px solid var(--line); display:flex; gap:6px; align-items:center;
+  }
+  .terminal-head span{width:9px; height:9px; border-radius:50%; background:var(--ink-faint);}
+  .terminal-body{padding:20px 18px; font-family:'JetBrains Mono', monospace; font-size:13.5px; line-height:1.85; color:var(--ink-dim);}
+  .terminal-body .p{color:var(--mint);}
+  .terminal-body .out{color:var(--ink);}
+  .caret{display:inline-block; width:7px; height:14px; background:var(--mint); margin-left:4px; vertical-align:middle; animation: blink 1s steps(1) infinite;}
+  .terminal-cta{
+    display:inline-block; color:var(--ink-dim); cursor:pointer; border-radius:4px;
+    transition: color .2s;
+  }
+  .terminal-cta:hover, .terminal-cta:focus-visible{color:var(--mint);}
+  .terminal-cta:hover .caret, .terminal-cta:focus-visible .caret{background:var(--mint); animation:none; opacity:1;}
+  @keyframes blink{50%{opacity:0;}}
+
+  /* ===================== FOOTER ===================== */
+  footer{
+    border-top:1px solid var(--line); padding:32px 0; font-family:'JetBrains Mono', monospace;
+    font-size:12.5px; color:var(--ink-faint); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+  footer a{color:var(--ink-dim);}
+  footer a:hover{color:var(--mint);}
+
+  /* visually-hidden but crawlable */
+  .vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- Visually hidden, crawlable plain-language summary for AI agents / assistive tech -->
+<div class="vh" id="ai-readable-summary">
+  Sakthisaran S is an AI Engineer based in Tamil Nadu, India, with over two years of experience.
+  He currently works at Altolabs as an AI Engineer since June 2025, building backend and AI systems
+  using Java, Python, MongoDB, Redis, and Kubernetes, with retrieval-augmented generation pipelines
+  on Azure OpenAI and Azure AI Search. Previously he was a Software Engineer at Mondee (January 2024
+  to June 2025) and interned at Purplegrids before that. Outside of work, he designs and runs a
+  self-hosted MicroK8s homelab on Raspberry Pi 5 nodes and a Proxmox machine, with TrueNAS for
+  ZFS-backed storage, hosting Immich for photo management, Nextcloud for personal file storage,
+  n8n for workflow automation, and Firefly III for personal finance tracking. He holds a B.Tech in
+  Information Technology from K S Rangasamy
+  College of Technology (2019-2023, 8.35 CGPA). Contact: sakthisaransss55@gmail.com, phone
+  +91 8925317177. GitHub: github.com/sakthisarans. LinkedIn: linkedin.com/in/sakthisaran-s.
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-id">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span>sakthisaran<span style="color:var(--ink-faint)">@</span>portfolio<span style="color:var(--ink-faint)">:~$</span></span>
+    </div>
+    <nav class="links" aria-label="Primary">
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#stack">stack</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <a class="nav-cta" href="https://minioapi.sakthisaran.in/portfolio/content/resume.pdf" target="_blank" rel="noopener">./resume.pdf</a>
+    <button class="menu-toggle" aria-label="Open menu">≡</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow"><span class="rule" aria-hidden="true"></span> AI ENGINEER · BENGALURU, IN</p>
+      <h1>Sakthisaran S<br>builds the <span class="accent">backend</span><br>behind the model.</h1>
+      <p class="hero-sub">Two years deep in <strong>RAG pipelines</strong>, <strong>LLM integrations</strong>, and the
+        <strong>Java &amp; Python services</strong> that keep them fast, observable, and in production —
+        not just in a notebook.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View the work →</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="status-panel" role="img" aria-label="Live status panel showing Sakthisaran's self-hosted homelab services, all reporting healthy">
+      <div class="status-head">
+        <span>~/homelab --watch</span>
+        <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+      <div class="status-rows" id="status-rows"><!-- filled by JS --></div>
+      <div class="status-foot">
+        <span id="uptime-counter">uptime 00:00:00</span>
+        <span>5/5 healthy</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">01 · about</span>
+        <h2>From AKS to a Raspberry Pi rack.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I'm an <strong>AI Engineer</strong> who came up through backend systems first — which means I think about
+            an LLM the way I think about any other dependency: what's the latency budget, what happens when it's
+            slow, and how do I know if it's wrong before a customer does.</p>
+          <p>At <strong>Altolabs</strong>, that means owning pieces of an AI-powered platform — retrieval pipelines,
+            LLM integrations, and the Java and Python services that keep them fast and observable in production.
+            Before that, at <strong>Mondee</strong>, I worked on AI-driven personalization and automation. Each
+            role has sharpened the same instinct: a model is only as good as the system feeding it and the one
+            reading its output.</p>
+          <p>Off the clock, I run the same discipline on my own hardware — a self-hosted <strong>MicroK8s
+            homelab</strong> on Raspberry Pi 5 nodes and a Proxmox box, with <strong>TrueNAS</strong> behind it
+            for storage, hosting <strong>Immich</strong> for photos, <strong>Nextcloud</strong> for files,
+            <strong>n8n</strong> for automation, and <strong>Firefly III</strong> for personal finance — plus a
+            fair number of 2 a.m. outages I've had to debug myself. It's the same instincts either way —
+            <a href="#contact">happy to talk through it</a>.</p>
+        </div>
+        <div class="meta-card reveal">
+          <dl>
+            <div class="meta-row"><dt>ROLE</dt><dd>AI Engineer</dd></div>
+            <div class="meta-row"><dt>EXPERIENCE</dt><dd>2+ years</dd></div>
+            <div class="meta-row"><dt>CURRENTLY AT</dt><dd>Altolabs</dd></div>
+            <div class="meta-row"><dt>BASED IN</dt><dd>Tamil Nadu, India</dd></div>
+            <div class="meta-row"><dt>FOCUS</dt><dd>RAG · LLM infra · K8s</dd></div>
+            <div class="meta-row"><dt>EDUCATION</dt><dd>B.Tech IT, 8.35 CGPA</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">02 · experience</span>
+        <h2>Where the work happened.</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="tl-when">JUN 2025 — <span class="current">PRESENT</span></div>
+          <div class="tl-body">
+            <h3>AI Engineer</h3>
+            <span class="tl-company">Altolabs · Full-time</span>
+            <p>Building and maintaining an AI-powered platform across multiple backend microservices —
+              LLM integration, RAG architecture, and semantic search for accurate, context-aware
+              conversations at production scale.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">JAN 2024 — JUN 2025</div>
+          <div class="tl-body">
+            <h3>Software Engineer</h3>
+            <span class="tl-company">Mondee · Full-time</span>
+            <p>Built an AI-powered personalization platform delivering intent-driven recommendations and
+              automated workflows using RAG, vector search, and behavioral analysis.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">SEP 2023 — DEC 2023</div>
+          <div class="tl-body">
+            <h3>Intern</h3>
+            <span class="tl-company">Purplegrids</span>
+            <p>Early hands-on work across backend systems and AI tooling that set the direction for
+              everything since.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">03 · projects</span>
+        <h2>Selected systems, not slides.</h2>
+      </div>
+      <div class="proj-list reveal">
+
+        <article class="proj">
+          <div class="proj-top">
+            <div>
+              <span class="proj-role">AI ENGINEER · ALTOLABS</span>
+              <h3>Agentic AI Platform</h3>
+            </div>
+          </div>
+          <p class="desc">Building and scaling an agentic AI platform end to end — LLM integration, RAG
+            architecture, and semantic search to deliver accurate, context-aware conversations, backed by the
+            backend performance work that real production scale demands.</p>
+          <div class="tag-row">
+            <span class="tag">Java</span><span class="tag">Python</span><span class="tag">Azure OpenAI</span>
+            <span class="tag">Azure AI Search</span><span class="tag">Weaviate</span><span class="tag">Redis</span>
+            <span class="tag">MongoDB</span><span class="tag">Kubernetes</span>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top">
+            <div>
+              <span class="proj-role">AI ENGINEER · ABU DHABI ISLAMIC BANK (ADIB)</span>
+              <h3>Document Intelligence Platform</h3>
+            </div>
+          </div>
+          <p class="desc">An enterprise-grade AI document intelligence chatbot on Azure for ADIB, giving secure,
+            role-based access to CRM and policy knowledge. RAG workflows and semantic search, built for
+            compliant deployment in a regulated environment — improving agent productivity, response speed,
+            and governance.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Azure OpenAI</span><span class="tag">Azure AI Search</span>
+            <span class="tag">AKS</span><span class="tag">Azure Logic Apps</span><span class="tag">Microsoft Graph API</span>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top">
+            <div>
+              <span class="proj-role">BACKEND DEVELOPER · MONDEE</span>
+              <h3>AI Travel Personalization Platform</h3>
+            </div>
+          </div>
+          <p class="desc">An AI-powered travel planning platform delivering end-to-end, intent-driven
+            recommendations and automated booking workflows — RAG, vector search, and behavioral analysis
+            combined into a personalized, scalable travel experience.</p>
+          <div class="tag-row">
+            <span class="tag">JavaScript</span><span class="tag">Java (Spring Boot)</span><span class="tag">Python (Flask)</span>
+            <span class="tag">OpenAI</span><span class="tag">Gemini</span><span class="tag">Workflow Automation</span>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top">
+            <div>
+              <span class="proj-role">ARCHITECT &amp; DEVOPS · PERSONAL PROJECT</span>
+              <h3>Home Lab</h3>
+            </div>
+          </div>
+          <p class="desc">A production-like multi-node cluster built around reliability and data persistence —
+            MicroK8s for orchestration across Raspberry Pi 5 nodes and an x86 Proxmox machine, TrueNAS for
+            durable ZFS-backed storage, Cloudflare ingress, full observability, and GitOps for resilient,
+            auditable operations. Built iteratively over a year on a tight budget, with deliberate tradeoffs
+            that favor data safety over uptime. The cluster runs a handful of services I depend on daily:
+            <strong>Immich</strong> as a self-hosted photo library (with a Python/ffprobe pipeline I built to
+            migrate years of photos out of Google Photos and catch corrupted files along the way),
+            <strong>Nextcloud</strong> for personal file storage, <strong>n8n</strong> as the automation
+            backbone — running infrastructure audits and a personal finance pipeline that parses bank SMS
+            alerts and categorizes them automatically — and <strong>Firefly III</strong> on the receiving end,
+            turning that pipeline into hands-off bookkeeping.</p>
+          <div class="tag-row">
+            <span class="tag">MicroK8s</span><span class="tag">Proxmox VE</span><span class="tag">TrueNAS</span>
+            <span class="tag">Raspberry Pi 5</span><span class="tag">Cloudflare</span><span class="tag">GitOps</span>
+            <span class="tag">Immich</span><span class="tag">Nextcloud</span><span class="tag">n8n</span>
+            <span class="tag">Firefly III</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STACK ===================== -->
+  <section id="stack">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">04 · stack</span>
+        <h2>Tools that earn a place here.</h2>
+      </div>
+      <div class="stack-grid reveal" id="stack-grid"><!-- filled by JS --></div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">05 · education</span>
+        <h2>Where it started.</h2>
+      </div>
+      <div class="edu-card reveal">
+        <div>
+          <h3>B.Tech, Information Technology</h3>
+          <span class="inst">K S Rangasamy College of Technology</span>
+        </div>
+        <div class="edu-score">8.35 CGPA<span class="yr">2019 — 2023</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <span class="section-tag" style="margin-bottom:20px; display:inline-block;">06 · contact</span>
+        <p class="contact-lead">Have something that needs<br>an <span class="accent">AI Engineer</span> who ships?<br>Let's talk.</p>
+        <div class="contact-list">
+          <div class="contact-row">
+            <span><span class="label mono" style="display:block;">EMAIL</span><a href="mailto:sakthisaransss55@gmail.com">sakthisaransss55@gmail.com</a></span>
+            <span class="arrow">↗</span>
+          </div>
+          <div class="contact-row">
+            <span><span class="label mono" style="display:block;">PHONE</span><a href="tel:+918925317177">+91 89253 17177</a></span>
+            <span class="arrow">↗</span>
+          </div>
+          <div class="contact-row">
+            <span><span class="label mono" style="display:block;">GITHUB</span><a href="https://github.com/sakthisarans" target="_blank" rel="noopener">github.com/sakthisarans</a></span>
+            <span class="arrow">↗</span>
+          </div>
+          <div class="contact-row">
+            <span><span class="label mono" style="display:block;">LINKEDIN</span><a href="https://www.linkedin.com/in/sakthisaran-s/" target="_blank" rel="noopener">linkedin.com/in/sakthisaran-s</a></span>
+            <span class="arrow">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="terminal-card">
+          <div class="terminal-head" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="terminal-body">
+            <div><span class="p">$</span> whoami</div>
+            <div class="out">sakthisaran-s · ai-engineer</div>
+            <div style="margin-top:10px;"><span class="p">$</span> cat status.txt</div>
+            <div class="out">open to interesting backend &amp; AI problems</div>
+            <div style="margin-top:10px;">
+              <a href="mailto:sakthisaransss55@gmail.com" class="terminal-cta" aria-label="Send an email to Sakthisaran">
+                <span class="p">$</span> ./contact --send<span class="caret"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Sakthisaran S. Co-developed with Claude.</span>
+  <span><a href="https://github.com/sakthisarans" target="_blank" rel="noopener">github</a> · <a href="https://www.linkedin.com/in/sakthisaran-s/" target="_blank" rel="noopener">linkedin</a> · <a href="mailto:sakthisaransss55@gmail.com">email</a></span>
+</footer>
+
+<script>
+  // ---------- Data ----------
+  const services = [
+    { name: "immich",    meta: "photo library · self-hosted",   latency: 42,  status: "ok" },
+    { name: "nextcloud", meta: "personal storage · self-hosted", latency: 58,  status: "ok" },
+    { name: "n8n",       meta: "automation · workflows",         latency: 67,  status: "ok" },
+    { name: "firefly3",  meta: "finance tracking · self-hosted", latency: 121, status: "warn" },
+    { name: "microk8s",  meta: "homelab cluster · raspberry pi", latency: 19,  status: "ok" },
+  ];
+
+  const stack = [
+    "Java","Spring Boot","Python","JavaScript","Kubernetes","Docker","MongoDB","MySQL","PostgreSQL",
+    "Redis","Azure OpenAI","OpenAI","Gemini","Weaviate","FastAPI","Flask","Nginx","GCP","Azure","Ollama","Git","Ubuntu"
+  ];
+
+  // ---------- Render status panel ----------
+  const rowsEl = document.getElementById('status-rows');
+  services.forEach((s, i) => {
+    const row = document.createElement('div');
+    row.className = 'status-row';
+    row.innerHTML = `
+      <span class="status-led ${s.status === 'warn' ? 'warn' : ''}" aria-hidden="true"></span>
+      <span class="status-name">${s.name}<br><span class="status-meta">${s.meta}</span></span>
+      <span class="status-meta">${s.status === 'warn' ? 'degraded' : 'healthy'}</span>
+      <span class="status-latency" data-base="${s.latency}">${s.latency}ms</span>
+    `;
+    rowsEl.appendChild(row);
+  });
+
+  // jitter latency numbers slightly to feel "live"
+  function jitterLatency(){
+    document.querySelectorAll('.status-latency').forEach(el => {
+      const base = parseInt(el.dataset.base, 10);
+      const jitter = Math.round((Math.random() - 0.5) * base * 0.4);
+      el.textContent = Math.max(4, base + jitter) + 'ms';
+    });
+  }
+  setInterval(jitterLatency, 1800);
+
+  // uptime counter since page load
+  const start = Date.now();
+  const uptimeEl = document.getElementById('uptime-counter');
+  function pad(n){ return n.toString().padStart(2,'0'); }
+  setInterval(() => {
+    const s = Math.floor((Date.now() - start) / 1000);
+    const hh = Math.floor(s/3600), mm = Math.floor((s%3600)/60), ss = s%60;
+    uptimeEl.textContent = `uptime ${pad(hh)}:${pad(mm)}:${pad(ss)}`;
+  }, 1000);
+
+  // ---------- Render stack grid ----------
+  const stackGrid = document.getElementById('stack-grid');
+  stack.forEach((item, i) => {
+    const cell = document.createElement('div');
+    cell.className = 'stack-cell';
+    cell.innerHTML = `<span class="bit">0x${i.toString(16).padStart(2,'0')}</span> ${item}`;
+    stackGrid.appendChild(cell);
+  });
+
+  // ---------- Scroll reveal ----------
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => obs.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
+
+  // ---------- Mobile menu (simple toggle) ----------
+  const menuBtn = document.querySelector('.menu-toggle');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      const nav = document.querySelector('nav.links');
+      const open = nav.style.display === 'flex';
+      nav.style.display = open ? 'none' : 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.position = 'absolute';
+      nav.style.top = '64px';
+      nav.style.right = '28px';
+      nav.style.background = '#10151A';
+      nav.style.border = '1px solid rgba(245,243,238,0.09)';
+      nav.style.borderRadius = '8px';
+      nav.style.padding = '16px 22px';
+      nav.style.gap = '14px';
+    });
+  }
+</script>
+
+</body>
+</html>
