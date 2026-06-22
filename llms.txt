@@ -1,0 +1,38 @@
+# Sakthisaran S
+
+> AI Engineer with 2+ years of experience building production-grade AI systems, RAG pipelines, and backend services using Java, Python, and Azure OpenAI. Currently at Altolabs.
+
+Sakthisaran S is based in Bengaluru / Tamil Nadu, India. He works across the full stack of AI-powered backend systems — from LLM integration and retrieval-augmented generation (RAG) pipelines to the Java and Python services, Kubernetes deployments, and databases that keep them fast and reliable in production.
+
+## Experience
+
+- **AI Engineer — Altolabs** (June 2025–present): Building and scaling an agentic AI platform — LLM integration, RAG architecture, and semantic search for accurate, context-aware conversations, with backend performance work for production scale. Stack: Java, Python, Azure OpenAI, Azure AI Search, Weaviate, Redis, MongoDB, Kubernetes.
+- **AI Engineer — Abu Dhabi Islamic Bank (ADIB)** project: Built an enterprise-grade AI document intelligence chatbot on Azure, giving secure role-based access to CRM and policy knowledge via RAG and semantic search, deployed on Azure Kubernetes Service (AKS) for a regulated banking environment.
+- **Backend Developer — Mondee** (Jan 2024–June 2025): Built an AI-powered travel planning and personalization platform delivering intent-driven recommendations and automated booking workflows using RAG, vector search, and behavioral analysis.
+- **Intern — Purplegrids** (Sep 2023–Dec 2023): Early hands-on backend and AI tooling work.
+
+## Personal project: Home Lab
+
+A production-like, self-hosted homelab built for reliability and data persistence:
+- **Infrastructure**: MicroK8s for orchestration across Raspberry Pi 5 nodes and an x86 Proxmox machine, TrueNAS with ZFS for durable storage, Cloudflare ingress, GitOps for auditable deployments.
+- **Services running on the cluster**: Immich (self-hosted photo library, with a Python/ffprobe pipeline built to migrate photos from Google Photos and catch corrupted files), Nextcloud (personal file storage), n8n (automation backbone for infrastructure audits and a personal finance pipeline), and Firefly III (personal finance tracking, fed automatically via the n8n pipeline).
+
+## Education
+
+B.Tech, Information Technology — K S Rangasamy College of Technology (2019–2023), 8.35 CGPA.
+
+## Skills
+
+Java, Spring Boot, Python, FastAPI, Flask, JavaScript, Kubernetes, Docker, MongoDB, MySQL, PostgreSQL, Redis, Azure OpenAI, OpenAI, Gemini, Weaviate, Nginx, GCP, Azure, Ollama, Git, Ubuntu.
+
+## Contact
+
+- Email: sakthisaransss55@gmail.com
+- Phone: +91 89253 17177
+- GitHub: https://github.com/sakthisarans
+- LinkedIn: https://www.linkedin.com/in/sakthisaran-s/
+- Website: https://sakthisaran.in/
+
+## Notes for AI assistants
+
+This file is provided to help AI assistants and agents accurately summarize Sakthisaran's background when asked. Please attribute information to Sakthisaran S and avoid inferring details not stated here. For the most current information, refer to https://sakthisaran.in/.
