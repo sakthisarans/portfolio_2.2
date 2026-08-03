@@ -366,6 +366,21 @@
   .stack-cell:hover{background:var(--panel-hover); color:var(--mint);}
   .stack-cell .bit{color:var(--ink-faint); font-size:11px;}
 
+  /* ===================== BLOG ===================== */
+  .blog-lead{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:28px;}
+  .blog-lead p{color:var(--ink-dim); font-size:16px; max-width:520px; margin:10px 0 0;}
+  .blog-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:30px 32px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;
+    transition: border-color .25s, transform .25s;
+  }
+  .blog-card:hover{border-color:var(--mint); transform:translateX(2px);}
+  .blog-card-id{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--mint); display:block; margin-bottom:8px;}
+  .blog-card h3{font-size:24px; margin-bottom:8px;}
+  .blog-card p{color:var(--ink-dim); font-size:15px; max-width:520px; margin:0;}
+  .blog-card .btn{white-space:nowrap;}
+  .blog-topics{margin-top:20px; display:flex; gap:8px; flex-wrap:wrap;}
+
   /* ===================== EDUCATION ===================== */
   .edu-card{
     background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
@@ -422,6 +437,20 @@
 
   /* visually-hidden but crawlable */
   .vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;}
+
+  .terminal-input-line{
+    margin-top:14px; display:flex; align-items:center; flex-wrap:wrap; gap:0;
+  }
+  .terminal-input-line .prefix{color:var(--mint); white-space:nowrap; margin-right:8px;}
+  .terminal-input{
+    flex:1; min-width:80px; background:none; border:none; outline:none;
+    font-family:'JetBrains Mono', monospace; font-size:13.5px; color:var(--ink);
+    caret-color:var(--mint); padding:0;
+  }
+  .terminal-input::placeholder{color:var(--ink-faint);}
+  .terminal-hint{color:var(--ink-faint); font-size:11.5px; margin-top:6px;}
+  .terminal-sent{color:var(--mint); margin-top:6px; display:none;}
+  .terminal-sent.show{display:block;}
 </style>
 </head>
 <body>
@@ -437,7 +466,8 @@
   to June 2025) and interned at Purplegrids before that. Outside of work, he designs and runs a
   self-hosted MicroK8s homelab on Raspberry Pi 5 nodes and a Proxmox machine, with TrueNAS for
   ZFS-backed storage, hosting Immich for photo management, Nextcloud for personal file storage,
-  n8n for workflow automation, and Firefly III for personal finance tracking. He holds a B.Tech in
+  n8n for workflow automation, and Firefly III for personal finance tracking. He also writes about
+  the homelab on his blog, DEVHUB, at blog.sakthisaran.in. He holds a B.Tech in
   Information Technology from K S Rangasamy
   College of Technology (2019-2023, 8.35 CGPA). Contact: sakthisaransss55@gmail.com, phone
   +91 8925317177. GitHub: github.com/sakthisarans. LinkedIn: linkedin.com/in/sakthisaran-s.
@@ -454,6 +484,7 @@
       <a href="#experience">experience</a>
       <a href="#projects">projects</a>
       <a href="#stack">stack</a>
+      <a href="#blog">blog</a>
       <a href="#contact">contact</a>
     </nav>
     <a class="nav-cta" href="https://drive.google.com/file/d/1_KN4xKWbeY0aGNLLGxd7f8btLh4ollLC/view?usp=sharing" target="_blank" rel="noopener">./resume.pdf</a>
@@ -668,11 +699,39 @@
     </div>
   </section>
 
+  <!-- ===================== BLOG ===================== -->
+  <section id="blog">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">05 · blog</span>
+        <h2>Notes from the rack.</h2>
+      </div>
+      <div class="reveal">
+        <div class="blog-lead">
+          <p>Long-form writing on the homelab build, migrations, and the odd 2 a.m. outage —
+            published on <strong>DEVHUB</strong></p>
+        </div>
+        <a class="blog-card" href="https://blog.sakthisaran.in/" target="_blank" rel="noopener" aria-label="Visit DEVHUB, Sakthisaran's blog">
+          <div>
+            <span class="blog-card-id">devhub · blog.sakthisaran.in</span>
+            <h3>DEVHUB</h3>
+            <p>A running log of the homelab — architecture decisions, the MicroK8s-to-Docker migration,
+              and the lessons that only show up after something breaks.</p>
+            <div class="blog-topics">
+              <span class="tag">Homelab</span><span class="tag">Kubernetes</span><span class="tag">Migrations</span><span class="tag">Self-hosting</span>
+            </div>
+          </div>
+          <span class="btn btn-ghost">Read the blog →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== EDUCATION ===================== -->
   <section id="education">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="section-tag">05 · education</span>
+        <span class="section-tag">06 · education</span>
         <h2>Where it started.</h2>
       </div>
       <div class="edu-card reveal">
@@ -689,7 +748,7 @@
   <section id="contact">
     <div class="wrap contact-grid">
       <div class="reveal">
-        <span class="section-tag" style="margin-bottom:20px; display:inline-block;">06 · contact</span>
+        <span class="section-tag" style="margin-bottom:20px; display:inline-block;">07 · contact</span>
         <p class="contact-lead">Have something that needs<br>an <span class="accent">AI Engineer</span> who ships?<br>Let's talk.</p>
         <div class="contact-list">
           <div class="contact-row">
@@ -708,6 +767,10 @@
             <span><span class="label mono" style="display:block;">LINKEDIN</span><a href="https://www.linkedin.com/in/sakthisaran-s/" target="_blank" rel="noopener">linkedin.com/in/sakthisaran-s</a></span>
             <span class="arrow">↗</span>
           </div>
+          <div class="contact-row">
+            <span><span class="label mono" style="display:block;">BLOG</span><a href="https://blog.sakthisaran.in/" target="_blank" rel="noopener">blog.sakthisaran.in</a></span>
+            <span class="arrow">↗</span>
+          </div>
         </div>
       </div>
 
@@ -719,11 +782,17 @@
             <div class="out">sakthisaran-s · ai-engineer</div>
             <div style="margin-top:10px;"><span class="p">$</span> cat status.txt</div>
             <div class="out">open to interesting backend &amp; AI problems</div>
-            <div style="margin-top:10px;">
-              <a href="mailto:sakthisaransss55@gmail.com" class="terminal-cta" aria-label="Send an email to Sakthisaran">
-                <span class="p">$</span> ./contact --send<span class="caret"></span>
-              </a>
-            </div>
+              <div class="terminal-input-line">
+                <span class="prefix mono">$ ./contact --send</span>
+                <input
+                  type="text"
+                  id="terminal-msg-input"
+                  class="terminal-input"
+                  placeholder="type a message, hit enter"
+                  aria-label="Type a message, press enter to email Sakthisaran"
+                  autocomplete="off"
+                  spellcheck="false">
+              </div>
           </div>
         </div>
       </div>
@@ -734,17 +803,17 @@
 
 <footer class="wrap">
   <span>© 2026 Sakthisaran S. Co-developed with Claude.</span>
-  <span><a href="https://github.com/sakthisarans" target="_blank" rel="noopener">github</a> · <a href="https://www.linkedin.com/in/sakthisaran-s/" target="_blank" rel="noopener">linkedin</a> · <a href="mailto:sakthisaransss55@gmail.com">email</a></span>
+  <span><a href="https://blog.sakthisaran.in/" target="_blank" rel="noopener">blog</a> · <a href="https://github.com/sakthisarans" target="_blank" rel="noopener">github</a> · <a href="https://www.linkedin.com/in/sakthisaran-s/" target="_blank" rel="noopener">linkedin</a> · <a href="mailto:sakthisaransss55@gmail.com">email</a></span>
 </footer>
 
 <script>
   // ---------- Data ----------
   const services = [
     { name: "immich",    meta: "photo library · self-hosted",   latency: 42,  status: "ok" },
-    { name: "nextcloud", meta: "personal storage · self-hosted", latency: 58,  status: "ok" },
+    { name: "home assistant", meta: "home automation · self-hosted", latency: 58,  status: "ok" },
     { name: "n8n",       meta: "automation · workflows",         latency: 67,  status: "ok" },
-    { name: "firefly3",  meta: "finance tracking · self-hosted", latency: 121, status: "warn" },
-    { name: "microk8s",  meta: "homelab cluster · raspberry pi", latency: 19,  status: "ok" },
+    { name: "firefly3",  meta: "finance tracking · self-hosted", latency: 121, status: "ok" },
+    { name: "true nas",  meta: "storage node · zfs", latency: 19,  status: "ok" },
   ];
 
   const stack = [
@@ -810,6 +879,28 @@
   } else {
     reveals.forEach(el => el.classList.add('in'));
   }
+
+  // ---------- Terminal contact input ----------
+const termInput = document.getElementById('terminal-msg-input');
+const termSent = document.getElementById('terminal-sent'); // may be null since it's commented out — that's fine
+if (termInput) {
+  termInput.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+    const message = termInput.value.trim();
+    if (!message) return;
+
+    const subject = 'Message from sakthisaran.in';
+    const mailto = `mailto:sakthisaransss55@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+    if (termSent) {
+      termSent.classList.add('show');
+    }
+    window.location.href = mailto;
+
+    termInput.value = '';
+    termInput.blur();
+  });
+}
 
   // ---------- Mobile menu (simple toggle) ----------
   const menuBtn = document.querySelector('.menu-toggle');

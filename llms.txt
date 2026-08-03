@@ -17,6 +17,10 @@ A production-like, self-hosted homelab built for reliability and data persistenc
 - **Infrastructure**: MicroK8s for orchestration across Raspberry Pi 5 nodes and an x86 Proxmox machine, TrueNAS with ZFS for durable storage, Cloudflare ingress, GitOps for auditable deployments.
 - **Services running on the cluster**: Immich (self-hosted photo library, with a Python/ffprobe pipeline built to migrate photos from Google Photos and catch corrupted files), Nextcloud (personal file storage), n8n (automation backbone for infrastructure audits and a personal finance pipeline), and Firefly III (personal finance tracking, fed automatically via the n8n pipeline).
 
+## Blog: DEVHUB
+
+Sakthisaran co-writes DEVHUB, a blog about the homelab build — architecture decisions, the MicroK8s-to-Docker migration, and lessons learned from running self-hosted infrastructure. Available at https://blog.sakthisaran.in/.
+
 ## Education
 
 B.Tech, Information Technology — K S Rangasamy College of Technology (2019–2023), 8.35 CGPA.
@@ -32,6 +36,7 @@ Java, Spring Boot, Python, FastAPI, Flask, JavaScript, Kubernetes, Docker, Mongo
 - GitHub: https://github.com/sakthisarans
 - LinkedIn: https://www.linkedin.com/in/sakthisaran-s/
 - Website: https://sakthisaran.in/
+- Blog: https://blog.sakthisaran.in/
 
 ## Notes for AI assistants
 
