@@ -21,6 +21,11 @@ A production-like, self-hosted homelab built for reliability and data persistenc
 
 Sakthisaran co-writes DEVHUB, a blog about the homelab build — architecture decisions, the MicroK8s-to-Docker migration, and lessons learned from running self-hosted infrastructure. Available at https://blog.sakthisaran.in/.
 
+## Achievements
+
+- **First Prize — Tamil Nadu Police Hackathon (2022)**: Awarded first prize by the Namakkal college team in the Tamil Nadu Police Hackathon.
+- **Microsoft Certified: Azure Fundamentals (AZ-900)**: Earned the Azure Fundamentals certification to strengthen cloud foundations knowledge.
+
 ## Education
 
 B.Tech, Information Technology — K S Rangasamy College of Technology (2019–2023), 8.35 CGPA.

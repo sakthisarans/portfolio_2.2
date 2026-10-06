@@ -86,27 +86,23 @@
 }
 </script>
 
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics 4: page-view tracking for visitor analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C52RS0FTBM"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-C52RS0FTBM');
+  gtag('config', 'G-C52RS0FTBM', { send_page_view: true });
 </script>
 
 <!-- AI-crawler friendly summary (machine-readable plain text, visually hidden) -->
 <meta name="ai-summary" content="Sakthisaran S — AI Engineer, 2+ years experience. Currently AI Engineer at Altolabs (June 2025–present), building backend and AI systems with Java, Python, Azure OpenAI, RAG, and Kubernetes. Previously Software Engineer at Mondee (Jan 2024–June 2025). Runs a self-hosted MicroK8s homelab on Raspberry Pi 5 and Proxmox with TrueNAS storage, hosting Immich, Nextcloud, n8n, and Firefly III. B.Tech IT from K S Rangasamy College of Technology, 8.35 CGPA, 2019–2023. Contact: sakthisaransss55@gmail.com.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
-
 <style>
   :root{
+    --font-sans: "Segoe UI", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    --font-display: Georgia, "Times New Roman", serif;
+    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
     --bg:#0B0E0F;
     --panel:#10151A;
     --panel-hover:#141B22;
@@ -134,7 +130,7 @@
     margin:0;
     background:var(--bg);
     color:var(--ink);
-    font-family:'Inter', system-ui, sans-serif;
+    font-family:var(--font-sans);
     font-size:16px;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
@@ -156,9 +152,9 @@
   a{color:inherit; text-decoration:none;}
   ::selection{background:var(--mint); color:#0B0E0F;}
 
-  h1,h2,h3{font-family:'Fraunces', Georgia, serif; font-weight:600; margin:0; letter-spacing:-0.01em;}
+  h1,h2,h3{font-family:var(--font-display); font-weight:600; margin:0; letter-spacing:-0.01em;}
 
-  .mono{font-family:'JetBrains Mono', monospace;}
+  .mono{font-family:var(--font-mono);}
 
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px; position:relative; z-index:1;}
 
@@ -185,7 +181,7 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:16px 28px; max-width:var(--maxw); margin:0 auto;
   }
-  .nav-id{display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono', monospace; font-size:14px;}
+  .nav-id{display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:14px;}
   .pulse-dot{
     width:8px; height:8px; border-radius:50%; background:var(--mint);
     box-shadow:0 0 0 0 rgba(94,234,212,0.6);
@@ -196,11 +192,15 @@
     70%{box-shadow:0 0 0 7px rgba(94,234,212,0);}
     100%{box-shadow:0 0 0 0 rgba(94,234,212,0);}
   }
-  nav.links{display:flex; gap:28px; font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--ink-dim);}
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    .pulse-dot { box-shadow: none; }
+  }
+  nav.links{display:flex; gap:28px; font-family:var(--font-mono); font-size:13px; color:var(--ink-dim);}
   nav.links a{transition:color .2s;}
   nav.links a:hover{color:var(--mint);}
   .nav-cta{
-    font-family:'JetBrains Mono', monospace; font-size:13px;
+    font-family:var(--font-mono); font-size:13px;
     border:1px solid var(--line-bright); padding:8px 16px; border-radius:6px;
     transition: all .2s;
   }
@@ -226,7 +226,7 @@
   }
 
   .eyebrow{
-    font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--mint);
+    font-family:var(--font-mono); font-size:13px; color:var(--mint);
     display:flex; align-items:center; gap:10px; margin-bottom:22px;
     opacity:0; animation: fadeUp .7s ease forwards; animation-delay:.05s;
   }
@@ -245,12 +245,34 @@
   }
   .hero-sub strong{color:var(--ink); font-weight:600;}
 
+  .specialization{padding:18px 0 18px; }
+  .specialization-panel{
+    width:100%; max-width:100%;
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px 30px 24px; display:flex; flex-direction:column; gap:18px;
+  }
+  .why-hire{
+    margin:0; font-family:var(--font-display); font-size:clamp(32px, 3vw, 64px);
+    line-height:1.04; color:var(--ink); letter-spacing:-0.04em;
+  }
+  .why-hire .accent{color:var(--mint); font-style:italic;}
+  .specialization-grid{display:flex; flex-wrap:wrap; gap:10px; margin-top:4px;}
+  .specialization-chip{
+    font-family:var(--font-mono); font-size:12px; color:var(--ink-dim);
+    border:1px solid var(--line); border-radius:999px; padding:8px 12px;
+    background:rgba(255,255,255,0.02);
+  }
+  @media (max-width: 760px){
+    .specialization-panel{padding:20px 18px 18px;}
+    .why-hire{font-size:clamp(30px, 8vw, 46px); line-height:1.04;}
+  }
+
   .hero-actions{
     margin-top:34px; display:flex; gap:14px; flex-wrap:wrap;
     opacity:0; animation: fadeUp .8s ease forwards; animation-delay:.42s;
   }
   .btn{
-    font-family:'JetBrains Mono', monospace; font-size:14px;
+    font-family:var(--font-mono); font-size:14px;
     padding:13px 22px; border-radius:7px; cursor:pointer; display:inline-flex; align-items:center; gap:8px;
     transition: all .2s ease;
   }
@@ -275,14 +297,14 @@
   .status-head{
     display:flex; align-items:center; justify-content:space-between;
     padding:13px 18px; border-bottom:1px solid var(--line);
-    font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--ink-dim);
+    font-family:var(--font-mono); font-size:12.5px; color:var(--ink-dim);
   }
   .status-head .dots{display:flex; gap:6px;}
   .status-head .dots span{width:9px; height:9px; border-radius:50%; background:var(--ink-faint);}
   .status-rows{padding:6px 0;}
   .status-row{
     display:grid; grid-template-columns: auto 1fr auto auto; gap:14px; align-items:center;
-    padding:12px 18px; font-family:'JetBrains Mono', monospace; font-size:13px;
+    padding:12px 18px; font-family:var(--font-mono); font-size:13px;
     border-bottom:1px solid var(--line); transition: background .2s;
   }
   .status-row:last-child{border-bottom:none;}
@@ -293,7 +315,7 @@
   .status-meta{color:var(--ink-faint); font-size:11.5px;}
   .status-latency{color:var(--mint-dim); color:var(--mint); font-size:12px; min-width:54px; text-align:right;}
   .status-foot{
-    padding:11px 18px; border-top:1px solid var(--line); font-family:'JetBrains Mono', monospace;
+    padding:11px 18px; border-top:1px solid var(--line); font-family:var(--font-mono);
     font-size:11.5px; color:var(--ink-faint); display:flex; justify-content:space-between;
   }
 
@@ -301,7 +323,7 @@
   section{padding:88px 0; border-top:1px solid var(--line); position:relative;}
   .section-head{display:flex; align-items:baseline; gap:18px; margin-bottom:48px; flex-wrap:wrap;}
   .section-tag{
-    font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--mint);
+    font-family:var(--font-mono); font-size:12.5px; color:var(--mint);
     background:var(--mint-dim); padding:5px 10px; border-radius:5px; white-space:nowrap;
   }
   .section-head h2{font-size:clamp(28px,3.4vw,40px);}
@@ -323,7 +345,7 @@
   .meta-card dl{margin:0;}
   .meta-row{display:flex; justify-content:space-between; gap:12px; padding:11px 0; border-bottom:1px solid var(--line); font-size:13.5px;}
   .meta-row:last-child{border-bottom:none;}
-  .meta-row dt{color:var(--ink-faint); font-family:'JetBrains Mono', monospace; font-size:12px;}
+  .meta-row dt{color:var(--ink-faint); font-family:var(--font-mono); font-size:12px;}
   .meta-row dd{margin:0; color:var(--ink); text-align:right;}
 
   /* ===================== TIMELINE / EXPERIENCE ===================== */
@@ -335,10 +357,10 @@
   .tl-item:first-child{padding-top:0;}
   .tl-item:last-child{border-bottom:none;}
   @media (max-width:760px){.tl-item{grid-template-columns:1fr; gap:10px;}}
-  .tl-when{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--ink-faint); padding-top:4px;}
+  .tl-when{font-family:var(--font-mono); font-size:13px; color:var(--ink-faint); padding-top:4px;}
   .tl-when .current{color:var(--mint);}
   .tl-body h3{font-size:21px; margin-bottom:4px;}
-  .tl-company{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--mint); margin-bottom:10px; display:block;}
+  .tl-company{font-family:var(--font-mono); font-size:13px; color:var(--mint); margin-bottom:10px; display:block;}
   .tl-body p{color:var(--ink-dim); font-size:15.5px; margin:0;}
 
   /* ===================== PROJECTS ===================== */
@@ -350,27 +372,47 @@
   }
   .proj:hover{border-color:var(--line-bright); transform:translateX(2px);}
   .proj-top{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap;}
-  .proj-role{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.06em;}
+  .proj-role{font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.06em;}
   .proj h3{font-size:23px; margin:6px 0 12px;}
   .proj p.desc{color:var(--ink-dim); font-size:15.5px; max-width:680px; margin:0 0 18px;}
   .tag-row{display:flex; gap:8px; flex-wrap:wrap;}
   .tag{
-    font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--ink-dim);
+    font-family:var(--font-mono); font-size:11.5px; color:var(--ink-dim);
     border:1px solid var(--line); padding:4px 9px; border-radius:5px;
   }
 
-  /* ===================== STACK ===================== */
-  .stack-grid{
-    display:grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap:1px;
-    border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+  /* ===================== SKILLS ===================== */
+  .skills-grid{
+    display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:20px;
   }
-  .stack-cell{
-    background:var(--panel); padding:20px 16px; border:1px solid var(--line);
-    font-family:'JetBrains Mono', monospace; font-size:13.5px; color:var(--ink);
-    display:flex; align-items:center; gap:10px; transition: background .2s, color .2s;
+  .skill-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px 20px; min-height:100%;
   }
-  .stack-cell:hover{background:var(--panel-hover); color:var(--mint);}
-  .stack-cell .bit{color:var(--ink-faint); font-size:11px;}
+  .skill-card h3{
+    margin:0 0 18px; font-size:17px; color:var(--ink); letter-spacing:0.02em;
+    font-family:var(--font-mono);
+  }
+  .skill-list{display:flex; flex-wrap:wrap; gap:8px;}
+  .skill-tag{
+    font-family:var(--font-mono); font-size:12px; color:var(--ink-dim);
+    border:1px solid var(--line); border-radius:999px; padding:7px 10px;
+    background:rgba(255,255,255,0.02);
+  }
+  .strengths-row{
+    margin-top:16px; display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+    padding-top:14px; border-top:1px solid var(--line);
+  }
+  .strengths-label{
+    font-family:var(--font-mono); font-size:10.5px; color:var(--mint);
+    letter-spacing:0.06em; text-transform:uppercase;
+  }
+  .strength-pill{
+    font-family:var(--font-mono); font-size:11px; color:var(--ink-dim);
+    border:1px solid var(--line); border-radius:999px; padding:5px 9px;
+    background:rgba(255,255,255,0.02);
+  }
+  @media (max-width: 900px){.skills-grid{grid-template-columns:1fr;}}
 
   /* ===================== BLOG ===================== */
   .blog-lead{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:28px;}
@@ -381,7 +423,7 @@
     transition: border-color .25s, transform .25s;
   }
   .blog-card:hover{border-color:var(--mint); transform:translateX(2px);}
-  .blog-card-id{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--mint); display:block; margin-bottom:8px;}
+  .blog-card-id{font-family:var(--font-mono); font-size:12px; color:var(--mint); display:block; margin-bottom:8px;}
   .blog-card h3{font-size:24px; margin-bottom:8px;}
   .blog-card p{color:var(--ink-dim); font-size:15px; max-width:520px; margin:0;}
   .blog-card .btn{white-space:nowrap;}
@@ -394,18 +436,18 @@
   }
   .edu-card h3{font-size:20px; margin-bottom:6px;}
   .edu-card .inst{color:var(--ink-dim); font-size:14.5px;}
-  .edu-score{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--mint); text-align:right;}
+  .edu-score{font-family:var(--font-mono); font-size:13px; color:var(--mint); text-align:right;}
   .edu-score .yr{display:block; color:var(--ink-faint); font-size:12px; margin-top:4px;}
 
   /* ===================== CONTACT ===================== */
   .contact-grid{display:grid; grid-template-columns: 1.1fr 0.9fr; gap:54px;}
   @media (max-width:880px){.contact-grid{grid-template-columns:1fr;}}
-  .contact-lead{font-size:clamp(26px,3vw,36px); font-family:'Fraunces',serif; line-height:1.25;}
+  .contact-lead{font-size:clamp(26px,3vw,36px); font-family:var(--font-display); line-height:1.25;}
   .contact-lead .accent{color:var(--mint); font-style:italic;}
   .contact-list{margin-top:34px; display:flex; flex-direction:column; gap:2px;}
   .contact-row{
     display:flex; justify-content:space-between; align-items:center; padding:16px 0;
-    border-bottom:1px solid var(--line); font-family:'JetBrains Mono', monospace; font-size:14.5px;
+    border-bottom:1px solid var(--line); font-family:var(--font-mono); font-size:14.5px;
   }
   .contact-row:first-child{padding-top:0;}
   .contact-row span.label{color:var(--ink-faint); font-size:12px;}
@@ -421,7 +463,7 @@
     padding:12px 16px; border-bottom:1px solid var(--line); display:flex; gap:6px; align-items:center;
   }
   .terminal-head span{width:9px; height:9px; border-radius:50%; background:var(--ink-faint);}
-  .terminal-body{padding:20px 18px; font-family:'JetBrains Mono', monospace; font-size:13.5px; line-height:1.85; color:var(--ink-dim);}
+  .terminal-body{padding:20px 18px; font-family:var(--font-mono); font-size:13.5px; line-height:1.85; color:var(--ink-dim);}
   .terminal-body .p{color:var(--mint);}
   .terminal-body .out{color:var(--ink);}
   .caret{display:inline-block; width:7px; height:14px; background:var(--mint); margin-left:4px; vertical-align:middle; animation: blink 1s steps(1) infinite;}
@@ -435,7 +477,7 @@
 
   /* ===================== FOOTER ===================== */
   footer{
-    border-top:1px solid var(--line); padding:32px 0; font-family:'JetBrains Mono', monospace;
+    border-top:1px solid var(--line); padding:32px 0; font-family:var(--font-mono);
     font-size:12.5px; color:var(--ink-faint); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
   }
   footer a{color:var(--ink-dim);}
@@ -450,7 +492,7 @@
   .terminal-input-line .prefix{color:var(--mint); white-space:nowrap; margin-right:8px;}
   .terminal-input{
     flex:1; min-width:80px; background:none; border:none; outline:none;
-    font-family:'JetBrains Mono', monospace; font-size:13.5px; color:var(--ink);
+    font-family:var(--font-mono); font-size:13.5px; color:var(--ink);
     caret-color:var(--mint); padding:0;
   }
   .terminal-input::placeholder{color:var(--ink-faint);}
@@ -526,6 +568,21 @@
       </div>
     </div>
   </div>
+
+  <section class="specialization">
+    <div class="wrap">
+      <div class="specialization-panel reveal">
+        <p class="why-hire">I build AI systems that are <span class="accent">production-ready, observable, and reliable</span>. I bridge backend engineering and LLM architecture.</p>
+        <div class="specialization-grid" aria-label="Specializations">
+          <span class="specialization-chip">AI systems design</span>
+          <span class="specialization-chip">LLM integrations</span>
+          <span class="specialization-chip">RAG and retrieval</span>
+          <span class="specialization-chip">Backend architecture</span>
+          <span class="specialization-chip">Kubernetes and cloud deployments</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===================== ABOUT ===================== -->
   <section id="about">
@@ -694,14 +751,21 @@
     </div>
   </section>
 
-  <!-- ===================== STACK ===================== -->
+  <!-- ===================== SKILLS ===================== -->
   <section id="stack">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="section-tag">04 · stack</span>
-        <h2>Tools that earn a place here.</h2>
+        <span class="section-tag">04 · skills</span>
+        <h2>What I work with.</h2>
       </div>
-      <div class="stack-grid reveal" id="stack-grid"><!-- filled by JS --></div>
+      <div class="skills-grid reveal" id="stack-grid"><!-- filled by JS --></div>
+      <div class="strengths-row reveal" aria-label="Core strengths">
+        <span class="strengths-label">Core strengths</span>
+        <span class="strength-pill">AI systems design</span>
+        <span class="strength-pill">Production-ready LLM apps</span>
+        <span class="strength-pill">Backend + cloud architecture</span>
+        <span class="strength-pill">Reliability &amp; observability</span>
+      </div>
     </div>
   </section>
 
@@ -733,11 +797,40 @@
     </div>
   </section>
 
+  <!-- ===================== ACHIEVEMENTS ===================== -->
+  <section id="achievements">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">06 · achievements</span>
+        <h2>Recognition that mattered.</h2>
+      </div>
+      <div class="edu-card reveal" style="margin-bottom:18px;">
+        <div>
+          <h3>First Prize — Tamil Nadu Police Hackathon</h3>
+          <span class="inst">
+            <a href="https://www.dtnext.in/tamilnadu/2022/12/16/namakkal-college-wins-first-prize-in-tamil-nadu-police-hackathon" target="_blank" rel="noopener">Namakkal college team</a> secured the top award in the 2022 Tamil Nadu Police Hackathon.
+          </span>
+        </div>
+        <div class="edu-score">2022<span class="yr">Hackathon</span></div>
+      </div>
+
+      <div class="edu-card reveal">
+        <div>
+          <h3>Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
+          <span class="inst">
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/SakthisaranS-9640/3AEB1779A23DD2C4?sharingId=963B93FC89C23759" target="_blank" rel="noopener">Credential verification</a>
+          </span>
+        </div>
+        <div class="edu-score">2025<span class="yr">Certification</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== EDUCATION ===================== -->
   <section id="education">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="section-tag">06 · education</span>
+        <span class="section-tag">07 · education</span>
         <h2>Where it started.</h2>
       </div>
       <div class="edu-card reveal">
@@ -754,7 +847,7 @@
   <section id="contact">
     <div class="wrap contact-grid">
       <div class="reveal">
-        <span class="section-tag" style="margin-bottom:20px; display:inline-block;">07 · contact</span>
+        <span class="section-tag" style="margin-bottom:20px; display:inline-block;">08 · contact</span>
         <p class="contact-lead">Have something that needs<br>an <span class="accent">AI Engineer</span> who ships?<br>Let's talk.</p>
         <div class="contact-list">
           <div class="contact-row">
@@ -822,52 +915,70 @@
     { name: "true nas",  meta: "storage node · zfs", latency: 19,  status: "ok" },
   ];
 
-  const stack = [
-    "Java","Spring Boot","Python","JavaScript","Kubernetes","Docker","MongoDB","MySQL","PostgreSQL",
-    "Redis","Azure OpenAI","OpenAI","Gemini","Weaviate","FastAPI","Flask","Nginx","GCP","Azure","Ollama","Git","Ubuntu"
+  const skillGroups = [
+    {
+      title: 'GENAI',
+      items: ['LLM integration','Prompt engineering','RAG','Retrieval','Semantic search','Vector search','Azure OpenAI','OpenAI','Gemini','Weaviate','Ollama']
+    },
+    {
+      title: 'DEVOPS',
+      items: ['Kubernetes','Docker','MicroK8s','GitOps','Azure','GCP','Linux','Nginx','Cloudflare','CI/CD','Monitoring']
+    },
+    {
+      title: 'BACKEND',
+      items: ['Java','Spring Boot','Python','FastAPI','Flask','JavaScript','REST APIs','MongoDB','MySQL','PostgreSQL','Redis','Git']
+    }
   ];
 
   // ---------- Render status panel ----------
   const rowsEl = document.getElementById('status-rows');
-  services.forEach((s, i) => {
-    const row = document.createElement('div');
-    row.className = 'status-row';
-    row.innerHTML = `
-      <span class="status-led ${s.status === 'warn' ? 'warn' : ''}" aria-hidden="true"></span>
-      <span class="status-name">${s.name}<br><span class="status-meta">${s.meta}</span></span>
-      <span class="status-meta">${s.status === 'warn' ? 'degraded' : 'healthy'}</span>
-      <span class="status-latency" data-base="${s.latency}">${s.latency}ms</span>
-    `;
-    rowsEl.appendChild(row);
-  });
-
-  // jitter latency numbers slightly to feel "live"
-  function jitterLatency(){
-    document.querySelectorAll('.status-latency').forEach(el => {
-      const base = parseInt(el.dataset.base, 10);
-      const jitter = Math.round((Math.random() - 0.5) * base * 0.4);
-      el.textContent = Math.max(4, base + jitter) + 'ms';
+  if (rowsEl) {
+    services.forEach((s, i) => {
+      const row = document.createElement('div');
+      row.className = 'status-row';
+      row.innerHTML = `
+        <span class="status-led ${s.status === 'warn' ? 'warn' : ''}" aria-hidden="true"></span>
+        <span class="status-name">${s.name}<br><span class="status-meta">${s.meta}</span></span>
+        <span class="status-meta">${s.status === 'warn' ? 'degraded' : 'healthy'}</span>
+        <span class="status-latency" data-base="${s.latency}">${s.latency}ms</span>
+      `;
+      rowsEl.appendChild(row);
     });
+
+    // jitter latency numbers slightly to feel "live"
+    function jitterLatency(){
+      document.querySelectorAll('.status-latency').forEach(el => {
+        const base = parseInt(el.dataset.base, 10);
+        const jitter = Math.round((Math.random() - 0.5) * base * 0.4);
+        el.textContent = Math.max(4, base + jitter) + 'ms';
+      });
+    }
+    setInterval(jitterLatency, 1800);
   }
-  setInterval(jitterLatency, 1800);
 
   // uptime counter since page load
   const start = Date.now();
   const uptimeEl = document.getElementById('uptime-counter');
-  function pad(n){ return n.toString().padStart(2,'0'); }
-  setInterval(() => {
-    const s = Math.floor((Date.now() - start) / 1000);
-    const hh = Math.floor(s/3600), mm = Math.floor((s%3600)/60), ss = s%60;
-    uptimeEl.textContent = `uptime ${pad(hh)}:${pad(mm)}:${pad(ss)}`;
-  }, 1000);
+  if (uptimeEl) {
+    function pad(n){ return n.toString().padStart(2,'0'); }
+    setInterval(() => {
+      const s = Math.floor((Date.now() - start) / 1000);
+      const hh = Math.floor(s/3600), mm = Math.floor((s%3600)/60), ss = s%60;
+      uptimeEl.textContent = `uptime ${pad(hh)}:${pad(mm)}:${pad(ss)}`;
+    }, 1000);
+  }
 
-  // ---------- Render stack grid ----------
+  // ---------- Render skill groups ----------
   const stackGrid = document.getElementById('stack-grid');
-  stack.forEach((item, i) => {
-    const cell = document.createElement('div');
-    cell.className = 'stack-cell';
-    cell.innerHTML = `<span class="bit">0x${i.toString(16).padStart(2,'0')}</span> ${item}`;
-    stackGrid.appendChild(cell);
+  skillGroups.forEach(group => {
+    const card = document.createElement('div');
+    card.className = 'skill-card';
+    const tags = group.items.map(item => `<span class="skill-tag">${item}</span>`).join('');
+    card.innerHTML = `
+      <h3>${group.title}</h3>
+      <div class="skill-list">${tags}</div>
+    `;
+    stackGrid.appendChild(card);
   });
 
   // ---------- Scroll reveal ----------
